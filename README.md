@@ -42,4 +42,9 @@ ___
 
 [2023_09_11作業](./README.md)
 
+https://www.youtube.com/watch?v=8g47p3taMgs
+
+[mysql](https://www.youtube.com/watch?v=8g47p3taMgs)
+
+
 112.09_Python_應用實戰班
