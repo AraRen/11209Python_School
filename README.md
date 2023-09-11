@@ -40,11 +40,6 @@ ___
 還是要勉強自己，笑起來處子般通紅；看人 `<strong>` 突然好想你 `</strong>`，顯露所有鋒芒堅持方向，顯露所有鋒芒堅持方向，在我活的地方為什麼你，我嘆了嘆氣 `var a = 0`。
 [https://www.casper.tw/development/2019/11/23/ten-mins-learn-markdown/]
 
-[2023_09_11作業](./README.md)
-
-https://www.youtube.com/watch?v=8g47p3taMgs
-
-[mysql](https://www.youtube.com/watch?v=8g47p3taMgs)
-
+[2023_09_07作業](./README.md)
 
 112.09_Python_應用實戰班
