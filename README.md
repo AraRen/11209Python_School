@@ -13,5 +13,4 @@
 [2023_09_22作業_下午](https://github.com/AraRen/PythonSchool_HW/blob/main/2023_09_22_%E4%BD%9C%E6%A5%AD/Homework%E4%B8%8B%E5%8D%88.ipynb)
 
 
-
-112.09_Python_應用實戰班
+Python_應用實戰班
