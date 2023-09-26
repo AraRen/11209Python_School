@@ -1,6 +1,6 @@
 # 11209Python_School
 
-[2023_09_07作業](./2023_09_07_作業/README.md)
+[2023_09_07作業](https://github.com/AraRen/PythonSchool_HW/tree/main/2023_09_07_%E4%BD%9C%E6%A5%AD)
 
 [2023_09_11作業](./2023_09_11_作業/Homework.ipynb)
 
