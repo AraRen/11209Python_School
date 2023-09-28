@@ -18,5 +18,5 @@ class Person:
 if __name__ == '__main__':
     p1 = Person("robert",78,183)
     print(p1.name)
-    print(p1.nmi())
-    
+    print(p1.bmi())
+
