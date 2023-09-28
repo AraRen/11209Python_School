@@ -19,6 +19,7 @@ class Player:
         descript += "骰子2=3\n"
         descript += "骰子3=5\n"
         descript += "骰子4=5\n"
-        dsecript += "得分=15分"
+        descript += "得分=15分"
+
         return descript
     
