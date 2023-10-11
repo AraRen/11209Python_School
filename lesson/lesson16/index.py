@@ -1,9 +1,9 @@
 import dataSource
 
 def main():
-    cities = dataSource.cities_info()
-    for city in cities:
-        print(city)
+    names = dataSource.cityNames()
+    print(names)
+    
 
 if __name__ == "__main__":
     main()
