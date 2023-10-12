@@ -40,13 +40,10 @@ def cityNames() -> list[str]:
         names.append(cityName)
     return names
 
-city = []
-
 def info(name:str) -> list[str]:
     cities = cities_info()
-    #print(type(cities))
     for city in cities:
         if city[1] == name:
             return city
-        
+
     return []
