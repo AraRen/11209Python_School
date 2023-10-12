@@ -16,14 +16,29 @@ class Window(tk.Tk):
         bottomFrame = tk.Frame(self,background='#B9887D')
         choices = dataSource.cityNames()
         choicesvar = tk.StringVar(value=choices)
-        listbox = tk.Listbox(bottomFrame,listvariable=choicesvar,width=12)
-        listbox.pack(pady=20)        
+        self.listbox = tk.Listbox(bottomFrame,listvariable=choicesvar,width=12)
+        self.listbox.pack(pady=20)        
         bottomFrame.pack(expand=True,fill='x')
+        self.listbox.bind("<<ListboxSelect>>",self.user_selected)
 
-        listbox.bind("<<ListboxSelect>>",self.user_selected)
+
+        resultFrame = tk.Frame(self)
+        tk.Label(resultFrame,text="年度").grid(column=0,row=0)
+        tk.Label(resultFrame,text="地區").grid(column=0,row=1)
+        tk.Label(resultFrame,text="人口數").grid(column=0,row=2)
+        tk.Label(resultFrame,text="土地面積").grid(column=0,row=3)
+        tk.Label(resultFrame,text="人口密度").grid(column=0,row=4)
+        tk.Label(resultFrame,text="111").grid(column=1,row=0)
+        tk.Label(resultFrame,text="新北市中和區").grid(column=1,row=1)
+        tk.Label(resultFrame,text="403109").grid(column=1,row=2)
+        tk.Label(resultFrame,text="20.144").grid(column=1,row=3)
+        tk.Label(resultFrame,text="20011").grid(column=1,row=4)
+        resultFrame.pack()
 
     def user_selected(self,event):
-        print("user selected")
+        selectedIndex = self.listbox.curselection()[0]
+        cityName = self.listbox.get(selectedIndex)
+        print(dataSource.info(cityName))
 
 
 def main():
