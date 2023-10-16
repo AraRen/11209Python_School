@@ -3,23 +3,27 @@
 '''
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image, ImageTk
 
 class Window(tk.Tk):
     def __init__(self,**kwargs):
-        super().__init__(**kwargs)
-        self.geometry("400x250+300+300")
-        self.title("Lines")
+        super().__init__(**kwargs)        
+        self.title("Image")
+        self.geometry("300x250")
         self.configure(background='#E79460')
 
 class MyFrame(tk.Frame):
     def __init__(self,master,**kwargs):
         super().__init__(master,**kwargs)
         self.configure(background='#9E7A7A')
-        canvas = tk.Canvas(self)
-        canvas.create_line(15, 30, 200, 30)
-        canvas.create_line(300, 35, 300, 200, dash=(4, 2))
-        canvas.create_line(55, 85, 155, 85, 105, 180, 55, 85)
-        canvas.pack(expand=1,fill='both')
+        self.img = Image.open("pets.png")
+        self.pets = ImageTk.PhotoImage(self.img)
+        canvas = tk.Canvas(self,
+                           width=48,
+                           height=48
+                           )
+        canvas.create_image(24,24,image=self.pets,anchor=tk.CENTER)
+        canvas.pack()
         self.pack(expand=1, fill='both')
 
 
