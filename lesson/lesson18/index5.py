@@ -8,7 +8,7 @@ from PIL import Image, ImageTk
 class Window(tk.Tk):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
-        self.title("會員登入")
+        self.title("資料列表")
         #self.geometry("300x250")
         #self.configure(background='#E79460')
 
@@ -17,28 +17,25 @@ class MyFrame(ttk.LabelFrame):
         super().__init__(master,text=title,**kwargs)
         self.pack(expand=1, fill='both',padx=10,pady=10)
 
-        #標題
-        heading = ttk.Label(self,text="會員登入",font=('Helvetica',20),foreground='red')
-        heading.grid(column=0,row=0,columnspan=2,padx=(20,0))
+        self.tree = ttk.Treeview(self,columns=['#1','#2','#3'],show='headings')
+        self.tree.heading('#1',text='第一個')
+        self.tree.heading('#2',text='第二個')
+        self.tree.heading('#3',text='第三個')
 
-        username_label = ttk.Label(self,text="使用者名稱",font=('Helvetica',10))
-        username_label.grid(column=0,row=1,pady=5,padx=(10,1))
+        contacts = []
+        for n in range(1,11):
+            contacts.append([f'first{n}',f'last{n}',f'email{n}:example.com'])
+        
+        for contact in contacts:
+            self.tree.insert('',tk.END,values=contact)
+        self.tree.pack()
 
-        username_entry = ttk.Entry(self)
-        username_entry.grid(column=1,row=1,padx=(0,10))
-
-        password_label = ttk.Label(self,text="使用者密碼",font=('Helvetica',10))
-        password_label.grid(column=0,row=2,sticky='e',padx=(10,1))
-
-        password_entry = ttk.Entry(self,show='幹')
-        password_entry.grid(column=1,row=2,padx=(0,10))
-
-        login_button = tk.Button(self,text='登入')
-        login_button.grid(column=1,row=3,sticky='E',pady=5,padx=(0,10))
+    def choised(self):
+        print(self.aligement.get())
 
 def main():    
     window = Window()
-    myFrame = MyFrame(window,"系統登入")
+    myFrame = MyFrame(window,"資料列表")
     window.mainloop()
 
 if __name__ == "__main__":
