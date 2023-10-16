@@ -69,17 +69,12 @@ class MyFrame(tk.LabelFrame):
         self.tree.pack()
 
         self.tree.bind('<<TreeviewSelect>>',self.item_selected)
-
-       
-        
+              
     def item_selected(self,event):
         item_id = self.tree.selection()[0]
         item_dict = self.tree.item(item_id)
         print(item_dict['values'])
         dialog = GetPassword(self)
-        
-    
-
 
 def main():    
     window = Window()
