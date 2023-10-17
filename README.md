@@ -13,4 +13,6 @@
 [09/26_十八豆仔](https://github.com/AraRen/PythonSchool_HW/blob/main/2023_09_26_%E4%BD%9C%E6%A5%AD/HW.ipynb)
 
 
+[10/17_CSV視窗顯示&卷軸](https://github.com/AraRen/PythonSchool_HW/blob/main/2023_10_17_%E4%BD%9C%E6%A5%AD/HW_test.py)
+
 Python_應用實戰班
