@@ -58,6 +58,12 @@ class MyFrame(tk.LabelFrame):
         self.tree.heading('#1', text="第一欄")
         self.tree.heading('#2', text="第二欄")
         self.tree.heading('#3', text="第三欄")
+        self.tree.pack()
+
+        self.tree.grid(row=0, column=0, sticky='nsew')        
+        scrollbar = ttk.Scrollbar(self, orient=tk.VERTICAL, command=self.tree.yview)
+        self.tree.configure(yscroll=scrollbar.set)
+        scrollbar.grid(row=0, column=1, sticky='ns')
 
         contacts = []
         for n in range(1,100):
@@ -66,9 +72,7 @@ class MyFrame(tk.LabelFrame):
         for contact in contacts:
             self.tree.insert('',tk.END,value=contact)
         
-        self.tree.pack()
-
-        self.tree.bind('<<TreeviewSelect>>',self.item_selected)
+            self.tree.bind('<<TreeviewSelect>>',self.item_selected)
               
     def item_selected(self,event):
         item_id = self.tree.selection()[0]
