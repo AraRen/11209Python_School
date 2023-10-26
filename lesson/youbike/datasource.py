@@ -6,7 +6,6 @@ def __download_youbike_data()->list[dict]:
     下載台北市youbike資料2.0
     https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json
     '''
-
     youbike_url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
     response = requests.get(youbike_url)
     response.raise_for_status()
