@@ -21,7 +21,6 @@ def main():
         window.destroy()
 
     def updata_data()->None:
-        print('同步更新中')
         datasource.updata_sqlite_data()
         global t
         t = Timer(20,updata_data)
