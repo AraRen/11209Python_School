@@ -20,9 +20,13 @@ class Window(tk.Tk):
         topFrame.pack(pady=30)
 
         bottomFrame = tk.Frame(self)
+
         self.youbikeTreeView = YoubikeTreeView(bottomFrame,show='headings',columns=('sna','sarea','mday','ar','tot','sbi','bemp'))
         self.youbikeTreeView.pack()
         bottomFrame.pack(pady=30)
+
+        lastest_data = datasource.last_datetime_data()
+        self.youbikeTreeView.update_content(lastest_data)
 
 
 
