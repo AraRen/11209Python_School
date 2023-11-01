@@ -13,12 +13,12 @@ class YoubikeTreeView(ttk.Treeview):
 
 
         self.column('sna',width=240)
-        self.column('mday',width=150)
+        self.column('mday',width=160)
         self.column('sarea',width=60)
-        self.column('ar',width=250)
-        self.column('tot',width=70)
-        self.column('sbi',width=50)
-        self.column('bemp',width=50)
+        self.column('ar',width=270)
+        self.column('tot',width=80)
+        self.column('sbi',width=60)
+        self.column('bemp',width=60)
 
 
     def update_content(self,site_datas):

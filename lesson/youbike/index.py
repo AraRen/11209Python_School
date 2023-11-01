@@ -22,10 +22,13 @@ class Window(tk.Tk):
         topFrame.pack(pady=30)
 
         bottomFrame = tk.Frame(self)
-        
         self.youbikeTreeView = YoubikeTreeView(bottomFrame,show="headings",columns=('sna','mday','sarea','ar','tot','sbi','bemp'))
-        self.youbikeTreeView.pack()
+        self.youbikeTreeView.pack(side='left')
+        vsb = ttk.Scrollbar(bottomFrame,orient='vertical',command=self.youbikeTreeView.yview)
+        vsb.pack(side='left',fill='y')
+        self.youbikeTreeView.configure(yscrollcommand=vsb.set)
         bottomFrame.pack(pady=30)
+        print(datasource.search_sitename('三'))
 
 def main():    
     def update_data(w:Window)->None:

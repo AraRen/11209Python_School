@@ -11,7 +11,7 @@ def __download_youbike_data()->list[dict]:
     youbike_url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
     response = requests.get(youbike_url)
     response.raise_for_status()
-    print("連線成功")
+    print("連線中，請稍後")
     return response.json()
 
 def __create_table(conn:sqlite3.Connection):    
@@ -69,5 +69,19 @@ def lastest_datetime_data():
     rows = cursor.fetchall()
     cursor.close()
     conn.close()
-    
+    return rows
+
+def search_sitename(word:str) -> list[tuple]:
+    conn = sqlite3.connect("youbike.db")
+    cursor = conn.cursor()
+    sql = '''
+    SELECT 站點名稱,MAX(更新時間) AS 更新時間,行政區,地址,總車輛數,可借,可還
+    FROM 台北市youbike
+    GROUP BY 站點名稱
+    HAVING 站點名稱 like ?
+    '''
+    cursor.execute(sql,[f'%{word}%'])
+    rows = cursor.fetchall()
+    cursor.close()
+    conn.close()
     return rows
