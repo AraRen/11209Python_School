@@ -11,7 +11,7 @@ def __download_youbike_data()->list[dict]:
     youbike_url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
     response = requests.get(youbike_url)
     response.raise_for_status()
-    print('下載成功')
+    #print('下載成功')
     return response.json()
 
 def __create_table(conn:sqlite3.Connection):    

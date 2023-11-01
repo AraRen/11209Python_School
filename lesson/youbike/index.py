@@ -13,7 +13,15 @@ class Window(tk.Tk):
             messagebox.showerror('錯誤','網路錯誤\n將關閉應用程式\n請稍後再試')
             self.destroy()
         
-        print(datasource.last_datetime_data())
+        #print(datasource.last_datetime_data())
+        topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1,width=300,height=200)
+        tk.Label(topFrame,text="台北市Youbike即時資料",font=("arial",20),bg="#333333",fg="#FFFFFF").pack(padx=20,pady=20)
+        topFrame.pack()
+
+        bottomFrame = tk.Frame(self)
+        bottomFrame.pack(pady=30)
+
+
 
 t = None
 def main():
