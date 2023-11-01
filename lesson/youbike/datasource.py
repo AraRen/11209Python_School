@@ -53,3 +53,16 @@ def updata_sqlite_data():
     for item in data:
         __insert_data(conn,[item['sna'],item['sarea'],item['mday'],item['ar'],item['tot'],item['sbi'],item['bemp']])
     conn.close()
+
+def last_datetime_data():
+    with sqlite3.connect("youbike.db") as conn:
+        cursor = conn.cursor()
+        sql = '''
+        SELECT 站點名稱,MAX(更新時間) AS 更新時間,行政區,地址,總車輛數,可借,可還
+        FROM 台北市youbike
+        GROUP By 站點名稱
+        '''
+        cursor.execute(sql)
+        rows = cursor.fetchall()
+    
+    return rows

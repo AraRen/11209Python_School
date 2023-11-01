@@ -12,6 +12,8 @@ class Window(tk.Tk):
         except Exception:
             messagebox.showerror('錯誤','網路錯誤\n將關閉應用程式\n請稍後再試')
             self.destroy()
+        
+        print(datasource.last_datetime_data())
 
 t = None
 def main():
