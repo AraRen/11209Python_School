@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 from threading import Timer
+from youbikeTreeView import YoubikeTreeView
 import datasource
 
 class Window(tk.Tk):
@@ -16,9 +17,11 @@ class Window(tk.Tk):
         #print(datasource.last_datetime_data())
         topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1,width=300,height=200)
         tk.Label(topFrame,text="台北市Youbike即時資料",font=("arial",20),bg="#333333",fg="#FFFFFF").pack(padx=20,pady=20)
-        topFrame.pack()
+        topFrame.pack(pady=30)
 
         bottomFrame = tk.Frame(self)
+        self.youbikeTreeView = YoubikeTreeView(bottomFrame,show='headings',columns=('sna','sarea','mday','ar','tot','sbi','bemp'))
+        self.youbikeTreeView.pack()
         bottomFrame.pack(pady=30)
 
 
