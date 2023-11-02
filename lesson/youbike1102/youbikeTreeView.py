@@ -1,4 +1,5 @@
-from tkinter import ttk
+from tkinter import Frame, Misc, ttk
+import tkinter as tk
 from tkinter.simpledialog import Dialog
 
 class YoubikeTreeView(ttk.Treeview):
@@ -41,10 +42,63 @@ class YoubikeTreeView(ttk.Treeview):
     def selectedItem(self,event):
         selectedItem = self.focus()
         print(selectedItem)
-        print(self.item(selectedItem))
-        get_password = GetPassword(self.parent)
+        data_dict = self.item(selectedItem)
+        data_lict = data_dict['values']
+        title = data_lict[0]
+        detail = ShowDetail(self.parent,data=data_lict,title=title)
         
 
 
-class GetPassword(Dialog):
-    pass
+class ShowDetail(Dialog):
+    def __init__(self,parent,data,**kwargs):
+        self.sna = data[0]
+        self.mday = data[1]
+        self.sarea = data[2]
+        self.ar = data[3]
+        self.tot = data[4]
+        self.sbi = data[5]
+        self.bemp = data[6]
+        super().__init__(parent,**kwargs)
+
+
+    def body(self, master):
+        #super().body(master)
+        mainFrame = tk.Frame(master)
+        mainFrame.pack(padx=200,pady=100)
+
+        tk.Label(mainFrame,text='站點名稱').grid(column=0,row=0)
+        tk.Label(mainFrame,text='更新時間').grid(column=0,row=1)
+        tk.Label(mainFrame,text='行政區').grid(column=0,row=2)
+        tk.Label(mainFrame,text='地址').grid(column=0,row=3)
+        tk.Label(mainFrame,text='總車輛數').grid(column=0,row=4)
+        tk.Label(mainFrame,text='可借').grid(column=0,row=5)
+        tk.Label(mainFrame,text='可還').grid(column=0,row=6)
+        
+        
+        snaVar = tk.StringVar()
+        snaVar.set(self.sna)
+        tk.Entry(mainFrame,textvariable=snaVar,state='disabled').grid(column=1,row=0,padx=50)
+
+        mdayVar = tk.StringVar()
+        mdayVar.set(self.mday)
+        tk.Entry(mainFrame,textvariable=mdayVar,state='disabled').grid(column=1,row=1,padx=80)
+        
+        sareaVar = tk.StringVar()
+        sareaVar.set(self.sarea)
+        tk.Entry(mainFrame,textvariable=sareaVar,state='disabled').grid(column=1,row=2,padx=50)
+        
+        arVar = tk.StringVar()
+        arVar.set(self.ar)
+        tk.Entry(mainFrame,textvariable=arVar,state='disabled').grid(column=1,row=3,padx=100)
+        
+        totVar = tk.StringVar()
+        totVar.set(self.tot)
+        tk.Entry(mainFrame,textvariable=totVar,state='disabled').grid(column=1,row=4,padx=30)
+        
+        sbiVar = tk.StringVar()
+        sbiVar.set(self.sbi)
+        tk.Entry(mainFrame,textvariable=sbiVar,state='disabled').grid(column=1,row=5,padx=30)
+        
+        bempVar = tk.StringVar()
+        bempVar.set(self.bemp)
+        tk.Entry(mainFrame,textvariable=bempVar,state='disabled').grid(column=1,row=6,padx=30)
