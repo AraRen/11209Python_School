@@ -66,39 +66,39 @@ class ShowDetail(Dialog):
         mainFrame = tk.Frame(master)
         mainFrame.pack(padx=200,pady=100)
 
-        tk.Label(mainFrame,text='站點名稱').grid(column=0,row=0)
-        tk.Label(mainFrame,text='更新時間').grid(column=0,row=1)
-        tk.Label(mainFrame,text='行政區').grid(column=0,row=2)
-        tk.Label(mainFrame,text='地址').grid(column=0,row=3)
-        tk.Label(mainFrame,text='總車輛數').grid(column=0,row=4)
-        tk.Label(mainFrame,text='可借').grid(column=0,row=5)
-        tk.Label(mainFrame,text='可還').grid(column=0,row=6)
+        tk.Label(mainFrame,text='站點名稱').grid(column=0,row=0,sticky='W')
+        tk.Label(mainFrame,text='更新時間').grid(column=0,row=1,sticky='W')
+        tk.Label(mainFrame,text='行政區').grid(column=0,row=2,sticky='W')
+        tk.Label(mainFrame,text='地址').grid(column=0,row=3,sticky='W')
+        tk.Label(mainFrame,text='總車輛數').grid(column=0,row=4,sticky='W')
+        tk.Label(mainFrame,text='可借').grid(column=0,row=5,sticky='W')
+        tk.Label(mainFrame,text='可還').grid(column=0,row=6,sticky='W')
         
-        
+        #自行新增文字框寬度
         snaVar = tk.StringVar()
         snaVar.set(self.sna)
-        tk.Entry(mainFrame,textvariable=snaVar,state='disabled').grid(column=1,row=0,padx=50)
+        tk.Entry(mainFrame,textvariable=snaVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=0,sticky='E')
 
         mdayVar = tk.StringVar()
         mdayVar.set(self.mday)
-        tk.Entry(mainFrame,textvariable=mdayVar,state='disabled').grid(column=1,row=1,padx=80)
+        tk.Entry(mainFrame,textvariable=mdayVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=1,sticky='E')
         
         sareaVar = tk.StringVar()
         sareaVar.set(self.sarea)
-        tk.Entry(mainFrame,textvariable=sareaVar,state='disabled').grid(column=1,row=2,padx=50)
+        tk.Entry(mainFrame,textvariable=sareaVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=2,sticky='E')
         
         arVar = tk.StringVar()
         arVar.set(self.ar)
-        tk.Entry(mainFrame,textvariable=arVar,state='disabled').grid(column=1,row=3,padx=100)
+        tk.Entry(mainFrame,textvariable=arVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=3,sticky='E')
         
         totVar = tk.StringVar()
         totVar.set(self.tot)
-        tk.Entry(mainFrame,textvariable=totVar,state='disabled').grid(column=1,row=4,padx=30)
+        tk.Entry(mainFrame,textvariable=totVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=4,sticky='E')
         
         sbiVar = tk.StringVar()
         sbiVar.set(self.sbi)
-        tk.Entry(mainFrame,textvariable=sbiVar,state='disabled').grid(column=1,row=5,padx=30)
+        tk.Entry(mainFrame,textvariable=sbiVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=5,sticky='E')
         
         bempVar = tk.StringVar()
         bempVar.set(self.bemp)
-        tk.Entry(mainFrame,textvariable=bempVar,state='disabled').grid(column=1,row=6,padx=30)
+        tk.Entry(mainFrame,textvariable=bempVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=6,sticky='E')
