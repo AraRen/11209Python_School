@@ -11,7 +11,7 @@ def __download_youbike_data()->list[dict]:
     youbike_url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
     response = requests.get(youbike_url)
     response.raise_for_status()
-    print("正在與伺服器建立連線···")
+    print("伺服器連結中···")
     return response.json()
 
 def __create_table(conn:sqlite3.Connection):    
@@ -34,7 +34,7 @@ def __create_table(conn:sqlite3.Connection):
     )
     conn.commit()
     cursor.close()
-    print("建立Table中，請稍後···")
+    print("Table建構中···")
 
 def __insert_data(conn:sqlite3.Connection,values:list[any])->None:
     cursor = conn.cursor()
@@ -86,5 +86,3 @@ def search_sitename(word:str) -> list[tuple]:
     cursor.close()
     conn.close()
     return rows
-
-

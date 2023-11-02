@@ -13,8 +13,8 @@ class Window(tk.Tk):
         except Exception:
             messagebox.showerror("錯誤",'網路不正常\n將關閉應用程式\n請稍後再試')
             self.destroy()           
-        
-        
+
+
         #print(datasource.lastest_datetime_data())
         topFrame = tk.Frame(self,relief=tk.GROOVE,borderwidth=1)
         tk.Label(topFrame,text="台北市youbike及時資料",font=("arial", 20), bg="#333333", fg='#ffffff',padx=10,pady=10).pack(padx=20,pady=20)
@@ -45,7 +45,8 @@ class Window(tk.Tk):
         #使用者輸入的文字
         input_word = searchEntry.get()
         if input_word == "":
-            print("空的")
+            lastest_data = datasource.lastest_datetime_data()
+            self.youbikeTreeView.update_content(lastest_data)
         else:
             search_data = datasource.search_sitename(word=input_word)
             self.youbikeTreeView.update_content(search_data)
@@ -54,7 +55,6 @@ class Window(tk.Tk):
 def main():    
     def update_data(w:Window)->None:
         datasource.updata_sqlite_data()
-        #-----------更新treeView資料---------------
         lastest_data = datasource.lastest_datetime_data()
         w.youbikeTreeView.update_content(lastest_data)
 

@@ -1,8 +1,10 @@
 from tkinter import ttk
+from tkinter.simpledialog import Dialog
 
 class YoubikeTreeView(ttk.Treeview):
     def __init__(self,parent,**kwargs):
         super().__init__(parent,**kwargs)
+        self.parent = parent
         #------設定欄位名稱---------------
         self.heading('sna',text='站點名稱')
         self.heading('mday',text='更新時間')
@@ -21,8 +23,8 @@ class YoubikeTreeView(ttk.Treeview):
         self.column('sbi',width=50)
         self.column('bemp',width=50)
 
-        self.bind('<Button-1>',self.selectedItem)
-
+        #----------bind button1-------
+        self.bind('<ButtonRelease-1>', self.selectedItem)
 
     def update_content(self,site_datas):
         '''
@@ -33,10 +35,16 @@ class YoubikeTreeView(ttk.Treeview):
             self.delete(i)
         
         for index,site in enumerate(site_datas):
-            self.insert('','end',text=f'abc{index}',values=site)
+            self.insert('','end',text=f"abc{index}",values=site)
+
 
     def selectedItem(self,event):
         selectedItem = self.focus()
         print(selectedItem)
         print(self.item(selectedItem))
-        #self.item(selectedItem)
+        get_password = GetPassword(self.parent)
+        
+
+
+class GetPassword(Dialog):
+    pass
