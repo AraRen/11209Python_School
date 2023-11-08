@@ -1,4 +1,6 @@
 PyInputPlus==0.2.12
 requests
+flask
 Pillow
 yfinance==0.2.31
+psycopg2-binary==2.9.9
