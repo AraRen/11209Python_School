@@ -102,3 +102,19 @@ class ShowDetail(Dialog):
         bempVar = tk.StringVar()
         bempVar.set(self.bemp)
         tk.Entry(mainFrame,textvariable=bempVar,state='disabled',width=50,justify=tk.RIGHT).grid(column=1,row=6,sticky='E')
+
+    def button(self):
+        pass
+        
+        '''
+        over
+        '''
+        box = tk.Frame(self)
+
+        w = tk.Button(box,text="確認",width=10,command=self.ok,default=tk.ACTIVE)
+        w.pack(side=tk.LEFT,padx=5,pady=5)
+
+        self.bind("<Return>",self.ok)
+        self.bind("<Escape>",self.cancel)
+
+        box.pack()
