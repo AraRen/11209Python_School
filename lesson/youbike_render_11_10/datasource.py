@@ -10,7 +10,7 @@ def download_youbike_data()->list[dict]:
     youbike_url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
     response = requests.get(youbike_url)
     response.raise_for_status()
-    print("下載成功")
+    print("連線中，請稍後")
     return response.json()
 
 def create_table(conn)->None:    
@@ -33,7 +33,7 @@ def create_table(conn)->None:
     )
     conn.commit()
     cursor.close()
-    print("create_table成功")
+    print("Table建立成功")
 
 def insert_data(conn,values:list[any])->None:
     cursor = conn.cursor()
