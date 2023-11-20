@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     <title>Homepage</title>
 </head>
 <body>
     <h1>1234567896</h1>
     <h2>MDFRMDFR</h2>
     <h3>name:{{name}}</h3>
-    <h3>age:{{age}}</h3>
+    {{dataFrame.to_html() | safe}}
 </body>
 </html>
