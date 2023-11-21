@@ -9,3 +9,7 @@ flask
 Pillow
 yfinance==0.2.31
 psycopg2-binary==2.9.9
+
+#colob
+seaborn
+scipy == 1.11.4
