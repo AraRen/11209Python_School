@@ -65,7 +65,7 @@ def main():
         lastest_data = datasource.lastest_datetime_data()
         w.youbikeTreeView.update_content(lastest_data)
 
-        window.after(3*60*1000,update_data,w) #每隔3分鐘
+        window.after(10*60*1000,update_data,w) #每隔10分鐘
 
     window = Window()
     window.title('台北市youbike2.0')
