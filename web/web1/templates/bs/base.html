@@ -33,7 +33,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        {% for link,link_str in [("/bs/",'Home'),("/bs/product",'產品'),("/bs/profile",'個人簡介')]%}
+                        {% for link,link_str in [("/bs/",'Home'),("/bs/product",'產品'),("/bs/profile",'個人簡介'),("/bs/test1",'Test')]%}
                         <li class="nav-item">
                             {% if request.path == link %}                          
                             <a class="nav-link active" aria-current="page" href="{{link}}">{{link_str}}</a>
