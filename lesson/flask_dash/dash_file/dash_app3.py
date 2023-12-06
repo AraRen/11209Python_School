@@ -31,24 +31,16 @@ dash3.layout = html.Div(
                         style_table={'height': '300px', 'overflowY': 'auto'},
                         fixed_rows={'headers':True},
                         style_cell_conditional=[
-                            {   
-                                'if':{'column_id':'index'},
-                                'width':'5%'
-                            },
-                            {
-                                'if':{'column_id':'站點名稱'},
-                                'width':'25%'
-                            },
-                            {   
-                                'if':{'column_id':'總數'},
-                                'width':'5%'
-                            },{   
-                                'if':{'column_id':'可借'},
-                                'width':'5%'
-                            },{   
-                                'if':{'column_id':'可還'},
-                                'width':'5%'
-                            },
+                            {   'if':{'column_id':'index'},
+                                'width':'5%'},
+                            {   'if':{'column_id':'站點名稱'},
+                                'width':'25%'},
+                            {   'if':{'column_id':'總數'},
+                                'width':'5%'},
+                            {   'if':{'column_id':'可借'},
+                                'width':'5%'},
+                            {   'if':{'column_id':'可還'},
+                                'width':'5%'},
                         ]
                     ),
                 ],className="col text-center")
