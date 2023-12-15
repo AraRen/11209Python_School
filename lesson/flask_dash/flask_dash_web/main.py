@@ -4,6 +4,8 @@ from werkzeug.serving import run_simple
 from dash_file.dash_app1 import dash1
 from dash_file.dash_app2 import dash2
 from dash_file.dash_app3 import dash3
+from dash_file.dash_app4 import dash4
+
 
 app = Flask(__name__)
 
@@ -11,7 +13,8 @@ application = DispatcherMiddleware(
     app,
     {"/dash/app1": dash1.server,
      "/dash/app2": dash2.server,
-     "/dash/app3": dash3.server}
+     "/dash/app3": dash3.server,
+     "/dash/app4": dash4.server}
 )
 
 @app.route("/")
