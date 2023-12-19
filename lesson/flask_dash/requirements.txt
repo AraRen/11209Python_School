@@ -1,5 +1,7 @@
 requests
 flask
+Flask-WTF
+WTForms
 dash
 gunicorn
 pandas
